@@ -1,0 +1,58 @@
+{
+  "name": "fbm",
+  "version": "0.0.1",
+  "description": "(Browser-)Chrome-less Facebook Messanger",
+  "keywords": [
+    "node-webkit",
+    "Facebook",
+    "app"
+  ],
+  "homepage": "https://github.com/drikin/fbm",
+  "author": "Koh Aoki <http://blog.drikin.com>",
+  "contributors": [
+    {
+      "name": "Félix Saparelli",
+      "email": "twd@passcod.name"
+    },
+    {
+      "name": "Janis Jansons",
+      "email": "janis.jansons@janhouse.lv"
+    },
+    {
+      "name": "Richard Denton",
+      "email": "isdampe@gmail.com"
+    }
+  ],
+  "license": {
+    "type": "Public Domain",
+    "url": "https://passcod.name/PUBLIC.txt"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/drikin/fbm.git"
+  },
+  "engines": {
+    "node-webkit": ">=0.10.0"
+  },
+  "main": "app://fbm/index.html",
+  "chromium-args": "--disable-extensions --disable-flash-3d --disable-java --disable-webgl",
+  "nodejs": true,
+  "single-instance": true,
+  "user-agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML, like Gecko) Version/6.0 Mobile/10A403 Safari/8536.25",
+  "window": {
+    "icon": "icon.png",
+    "toolbar": true,
+    "height": 640,
+    "width": 720,
+    "min_width": 720,
+    "title": "Facebook",
+    "position": "centre",
+    "resizable": false
+  },
+  "dependencies": {
+    "jquery": "^2.1.1"
+  },
+  "devDependencies": {
+    "node-webkit-builder": "^1.0.11"
+  }
+}
