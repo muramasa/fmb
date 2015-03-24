@@ -22,4 +22,10 @@
         bar.style.display = "none";
     }
   });
+  
+  // for osx we need set the menu
+  // https://github.com/nwjs/nw.js/wiki/Menu#menucreatemacbuiltinappname
+  var nativeMenuBar = new gui.Menu({ type: "menubar" });
+  nativeMenuBar.createMacBuiltin(gui.App.manifest.name);
+  win.menu = nativeMenuBar;
 }).apply(this);
