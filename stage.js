@@ -22,4 +22,10 @@
         bar.style.display = "none";
     }
   });
+
+  // Need to set the menu using shortcuts on osx
+  // https://github.com/nwjs/nw.js/wiki/Menu#menucreatemacbuiltinappname
+  var nativeMenuBar = new gui.Menu({ type: "menubar" });
+  nativeMenuBar.createMacBuiltin(gui.App.manifest.name);
+  win.menu = nativeMenuBar;
 }).apply(this);
