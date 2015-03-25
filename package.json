@@ -42,9 +42,9 @@
     "icon": "icon.png",
     "toolbar": false,
     "height": 600,
-    "width": 720,
-    "min_width": 720,
-    "max_width": 720,
+    "width": 740,
+    "min_width": 740,
+    "max_width": 740,
     "title": "Facebook",
     "position": "centre",
     "resizable": true
