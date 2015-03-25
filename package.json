@@ -38,16 +38,16 @@
   "chromium-args": "--disable-extensions --disable-flash-3d --disable-java --disable-webgl",
   "nodejs": true,
   "single-instance": true,
-  "user-agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML, like Gecko) Version/6.0 Mobile/10A403 Safari/8536.25",
   "window": {
     "icon": "icon.png",
-    "toolbar": true,
-    "height": 640,
+    "toolbar": false,
+    "height": 600,
     "width": 720,
     "min_width": 720,
+    "max_width": 720,
     "title": "Facebook",
     "position": "centre",
-    "resizable": false
+    "resizable": true
   },
   "dependencies": {
     "jquery": "^2.1.1"
