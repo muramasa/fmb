@@ -18,10 +18,17 @@
 
     i.onload = function() {
         console.log('loaded');
-        var bar = d.getElementById("pagelet_bluebar");
-        bar.style.display = "none";
+        var topbar = d.getElementById("pagelet_bluebar");
+        topbar.style.display = "none";
+        var sidebar = d.getElementById("pagelet_sidebar");
+        sidebar.style.display = "none";
         var dock = d.getElementById("pagelet_dock");
         dock.style.display = "none";
+        var ad = d.getElementById("rightCol");
+        ad.style.display = "none";
+
+        var root = document.getElementById("main");
+        root.style.display = "block";
     }
   });
 
