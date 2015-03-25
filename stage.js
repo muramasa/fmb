@@ -36,6 +36,10 @@
             notif_count++;
             win.setBadgeLabel(notif_count);
         }
+        win.on('focus', function() {
+            notif_count = 0;
+            win.setBadgeLabel("");
+        });
 
         // ready to show
         var root = document.getElementById("main");
