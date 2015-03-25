@@ -14,8 +14,10 @@ iframe {
   min-height: 100%;
   min-width: 100%;
   width: 100%;
+  overflow: hidden;
 }
 
 ::-webkit-scrollbar {
 	width: 0px;
+	height: 0px;
 }
