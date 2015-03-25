@@ -17,6 +17,32 @@ iframe {
   overflow: hidden;
 }
 
+.invisible {
+  opacity: 0;
+}
+
+.visible {
+  opacity: 1;
+  transition: opacity 1s;
+}
+
+@keyframes fade-in {
+  0% {
+    display: none;
+    opacity: 0;
+  }
+
+  1% {
+    display: block;
+    opacity: 0;
+  }
+
+  100% {
+    display: block;
+    opacity: 1;
+  }
+}
+
 ::-webkit-scrollbar {
 	width: 0px;
 	height: 0px;

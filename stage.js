@@ -28,7 +28,7 @@
         ad.style.display = "none";
 
         var root = document.getElementById("main");
-        root.style.display = "block";
+        root.setAttribute("class", "visible");
     }
   });
 
