@@ -18,6 +18,8 @@
 
     i.onload = function() {
         console.log('loaded');
+        d.body.style.fontFamily = "Meiryo UI";
+
         var topbar = d.getElementById("pagelet_bluebar");
         topbar.style.display = "none";
         var sidebar = d.getElementById("pagelet_sidebar");
