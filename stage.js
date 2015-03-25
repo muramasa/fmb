@@ -20,6 +20,8 @@
         console.log('loaded');
         var bar = d.getElementById("pagelet_bluebar");
         bar.style.display = "none";
+        var dock = d.getElementById("pagelet_dock");
+        dock.style.display = "none";
     }
   });
 
