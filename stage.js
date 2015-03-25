@@ -29,6 +29,15 @@
         var ad = d.getElementById("rightCol");
         ad.style.display = "none";
 
+        // listen notification via audio tag
+        var a = d.getElementsByTagName("audio")[0];
+        var notif_count = 0;
+        a.onplay = function () {
+            notif_count++;
+            win.setBadgeLabel(notif_count);
+        }
+
+        // ready to show
         var root = document.getElementById("main");
         root.setAttribute("class", "visible");
     }
