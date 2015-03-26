@@ -18,7 +18,8 @@
 
     i.onload = function() {
         console.log('loaded');
-        d.body.style.fontFamily = "Meiryo UI";
+        // disable Meiryo hack once cause Mac font will be ugly
+        //d.body.style.fontFamily = "Meiryo UI";
 
         var topbar = d.getElementById("pagelet_bluebar");
         topbar.style.display = "none";
