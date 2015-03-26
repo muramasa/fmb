@@ -18,29 +18,41 @@
 
     i.onload = function() {
         console.log('loaded');
+        $(d.head).contents().append("<style>.panelFlyout {right: 0 !important;}</style>");
         // disable Meiryo hack once cause Mac font will be ugly
         //d.body.style.fontFamily = "Meiryo UI";
 
         var topbar = d.getElementById("pagelet_bluebar");
-        topbar.style.display = "none";
+        if (topbar && topbar.style) {
+          topbar.style.display = "none";
+        }
         var sidebar = d.getElementById("pagelet_sidebar");
-        sidebar.style.display = "none";
+        if (sidebar && sidebar.style) {
+          sidebar.style.display = "none";
+        }
         var dock = d.getElementById("pagelet_dock");
-        dock.style.display = "none";
+        if (dock && dock.style) {
+          dock.style.display = "none";
+        }
         var ad = d.getElementById("rightCol");
-        ad.style.display = "none";
+        if (ad && ad.style) {
+          ad.style.display = "none";
+        }
 
         // listen notification via audio tag
         var a = d.getElementsByTagName("audio")[0];
-        var notif_count = 0;
-        a.onplay = function () {
+        if (a) {
+          var notif_count = 0;
+          a.onplay = function () {
             notif_count++;
             win.setBadgeLabel(notif_count);
-        }
-        win.on('focus', function() {
+          }
+          win.on('focus', function() {
+            console.log('focus');
             notif_count = 0;
             win.setBadgeLabel("");
-        });
+          });
+        }
 
         // ready to show
         var root = document.getElementById("main");
@@ -50,7 +62,7 @@
 
   // Need to set the menu using shortcuts on osx
   // https://github.com/nwjs/nw.js/wiki/Menu#menucreatemacbuiltinappname
-  var nativeMenuBar = new gui.Menu({ type: "menubar" });
+  var nativeMenuBar = new gui.Menu({type: "menubar"});
   if (nativeMenuBar && nativeMenuBar.createMacBuiltin) {
     nativeMenuBar.createMacBuiltin(gui.App.manifest.name);
     win.menu = nativeMenuBar;
