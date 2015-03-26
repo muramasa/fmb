@@ -38,21 +38,38 @@
         if (ad && ad.style) {
           ad.style.display = "none";
         }
+        
+        // observe message notification count on the blue bar
+        var messageBadgeCountTag = d.querySelector('#mercurymessagesCountValue');
+        var badgeCountObserver = new MutationObserver(function(mutations) {
+          mutations.forEach(function(mutation) {
+            var addedNodes = mutation.addedNodes;
+            if (addedNodes && addedNodes.length ===1) {
+              var count = parseInt(addedNodes[0].data);
+              if (count) {
+                win.setBadgeLabel(count);
+              } else {
+                win.setBadgeLabel("");
+              }
+            }
+          });
+        });
+        badgeCountObserver.observe(messageBadgeCountTag, { childList: true });
 
         // listen notification via audio tag
-        var a = d.getElementsByTagName("audio")[0];
-        if (a) {
-          var notif_count = 0;
-          a.onplay = function () {
-            notif_count++;
-            win.setBadgeLabel(notif_count);
-          }
-          win.on('focus', function() {
-            console.log('focus');
-            notif_count = 0;
-            win.setBadgeLabel("");
-          });
-        }
+        //var a = d.getElementsByTagName("audio")[0];
+        //if (a) {
+        //  var notif_count = 0;
+        //  a.onplay = function () {
+        //    notif_count++;
+        //    win.setBadgeLabel(notif_count);
+        //  }
+        //  win.on('focus', function() {
+        //    console.log('focus');
+        //    notif_count = 0;
+        //    win.setBadgeLabel("");
+        //  });
+        //}
 
         // ready to show
         var root = document.getElementById("main");
